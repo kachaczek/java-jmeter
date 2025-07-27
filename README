@@ -1,0 +1,16 @@
+#### Java and Jmeter project created for learning purposes
+
+# Running command below, starts a web server on port 8081 and it is possible to send POST/GET requests eg. via JMeter or curl
+    mvn spring-boot:run
+
+# Link to access GET request with greetings to Katarzyna
+    http://localhost:8081/greetings
+
+# POST curl command on Unix system:
+    curl -X POST http://localhost:8080/greetings -H "Content-Type: text/plain" -d "Katarzyna"
+    
+# POST command on Windows system:
+Invoke-WebRequest -Uri "http://localhost:8081/greetings"
+  -Method Post `
+  -Body "Katarzyna" `
+  -ContentType "text/plain"
