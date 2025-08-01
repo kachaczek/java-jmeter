@@ -1,4 +1,4 @@
-#### Java and Jmeter project created for learning purposes
+#### Java and JMeter Project created for learning purposes
 
 # Running command below, starts a web server on port 8081 and it is possible to send POST/GET requests eg. via JMeter or curl
     mvn spring-boot:run

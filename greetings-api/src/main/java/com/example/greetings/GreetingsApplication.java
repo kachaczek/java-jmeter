@@ -11,25 +11,23 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetingsApplication {
 
-    String greetings;
-
-    public String setGreetings(@RequestBody String name) {
-        greetings = "Hello, " + name + "!";
-        return greetings;
-    }
+    String greetings = "";
 
     public static void main(String[] args) {
         SpringApplication.run(GreetingsApplication.class, args);
     }
 
     @PostMapping("/greetings")
-    public String postGreetingsForUser(@RequestBody String name) {
-        greetings = setGreetings(name);
-        return greetings;
+    public MyObject postGreetingsForUser(@RequestBody String name) {
+        greetings = "Hello, " + name + "!";
+        return new MyObject(greetings, true);
     }
 
     @GetMapping("/greetings")
-    public String getGreetings() {
-        return greetings;
+    public MyObject getGreetings() {
+        if (greetings.isEmpty()) {
+            greetings = "Greetings not set yet!";
+        }
+        return new MyObject(greetings, true);
     }
 }
