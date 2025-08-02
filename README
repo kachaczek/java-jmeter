@@ -1,4 +1,10 @@
 #### Java and JMeter Project created for learning purposes
+    pom.xml is a configuartion file used by Maven.
+    test-plan.jmx is a test plan for performance testing in JMeter. This file contains information which endpoints to test
+    (eg. POST to /greetings), how many users etc.
+    Directory /jmeter-test/photos contains screens of JMeter tool.
+    GreetingsApplication contains JUnit tests.
+    MyObject creates JSON format.
 
 # Running command below, starts a web server on port 8081 and it is possible to send POST/GET requests eg. via JMeter or curl
     mvn spring-boot:run
@@ -14,3 +20,5 @@ Invoke-WebRequest -Uri "http://localhost:8081/greetings"
   -Method Post `
   -Body "Katarzyna" `
   -ContentType "text/plain"
+
+
